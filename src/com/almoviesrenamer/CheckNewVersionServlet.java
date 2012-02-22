@@ -11,18 +11,16 @@ public class CheckNewVersionServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
 
-		/*
-		 * XXX ritornare valori diversi a seconda della versione diversa, es: if
-		 * parameter.version=3.0 then return ...
-		 */
-
 		String version = req.getParameter("version");
 		String lastVersion = "2.1";
 
 		resp.setContentType("text/plain");
-		if (version.equals(lastVersion))
+		if (version.equals(lastVersion)) {
 			resp.getWriter().println("ok");
-		else
+		} else if (version.charAt(0) == '2') {
 			resp.getWriter().println("new");
+		} else {
+			resp.getWriter().println("new_version_available");
+		}
 	}
 }
