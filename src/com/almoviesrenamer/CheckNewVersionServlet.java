@@ -15,12 +15,12 @@ public class CheckNewVersionServlet extends HttpServlet {
 		String lastVersion = "2.1";
 
 		resp.setContentType("text/plain");
-		if (version.equals(lastVersion)) {
-			resp.getWriter().println("ok");
-		} else if (version.charAt(0) == '2') {
+		
+		if (version != null && !version.equals(lastVersion)
+				&& version.charAt(0) == '2') {
 			resp.getWriter().println("new");
 		} else {
-			resp.getWriter().println("new_version_available");
+			resp.getWriter().println(lastVersion);
 		}
 	}
 }
