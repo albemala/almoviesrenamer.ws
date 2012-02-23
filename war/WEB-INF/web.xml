@@ -6,6 +6,15 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5">
 
 	<servlet>
+		<servlet-name>Exceptions</servlet-name>
+		<servlet-class>com.almoviesrenamer.ExceptionsServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Exceptions</servlet-name>
+		<url-pattern>/exceptions</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
 		<servlet-name>Stats</servlet-name>
 		<servlet-class>com.almoviesrenamer.StatsServlet</servlet-class>
 	</servlet>
