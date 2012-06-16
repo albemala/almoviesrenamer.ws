@@ -12,7 +12,7 @@ public class CheckNewVersionServlet extends HttpServlet {
 			throws IOException {
 
 		String version = req.getParameter("version");
-		String lastVersion = "3.1";
+		String lastVersion = "4";
 
 		resp.setContentType("text/plain");
 		
